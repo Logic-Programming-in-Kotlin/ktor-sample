@@ -1,0 +1,54 @@
+GET http://localhost:8080
+Accept: application/json
+
+<> 2022-05-04T201010.200.txt
+<> 2022-05-04T200404.200.txt
+
+###
+
+POST http://localhost:8080/double-receive
+Content-Type: application/json
+
+{
+  "id": "1",
+  "timestamp": "2022-05-04T201010.200.txt",
+  "data": "Hello World"
+}
+
+<> 2022-05-04T201441.200.txt
+###
+
+GET http://localhost:8080/location/kyiv
+
+<> 2022-05-04T201835.200.txt
+
+###
+GET http://localhost:8080/type/odesa/edit
+
+<> 2022-05-04T201955.200.txt
+###
+GET http://localhost:8080/static/index.html
+
+<> 2022-05-04T202726.200.html
+<> 2022-05-04T202133.200.html
+
+####
+GET http://localhost:8080/metrics-micrometer
+
+<> 2022-05-04T202251.200.txt
+###
+GET http://localhost:8080/json/kotlinx-serialization
+
+<> 2022-05-04T202855.200.json
+###
+
+GET http://localhost:8080/json/sealed
+###
+
+GET http://localhost:8080/json/sealed-list
+
+<> 2022-05-04T203846.200.json
+<> 2022-05-04T203725.200.json
+
+###
+GET http://localhost:8080/ktor/application/shutdown
